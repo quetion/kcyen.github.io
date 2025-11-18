@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顏廣杰教授 | 個人教學與研究網頁</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;    /* 沈穩深藍 */
+            --accent-color: #3498db;     /* 專業亮藍 */
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* 導航列 */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero 區塊 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* 通用區塊樣式 */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* 關於我 */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-text ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .profile-text li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .profile-text li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 課程介紹 */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .course-tag {
+            display: inline-block;
+            background: #e1ecf4;
+            color: #39739d;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        /* 頁腳 */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .about-container { flex-direction: column; }
+            .nav-links { display: none; } /* 簡化版：手機隱藏選單 */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">顏廣杰教授</div>
+            <div class="nav-links">
+                <a href="#about">關於我</a>
+                <a href="#courses">課程介紹</a>
+                <a href="#research">研究領域</a>
+                <a href="#contact">聯絡資訊</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>理論與實務的橋樑</h1>
+        <p>東吳大學經濟學系 | 專注於金融科技、投資理論與貨幣歷史</p>
+        <a href="#courses" class="btn">查看教學課程</a>
+    </div>
+
+    <section id="about">
+        <h2>關於我</h2>
+        <div class="about-container">
+            <div class="profile-text">
+                <p>您好，我是顏廣杰。現任職於<strong>東吳大學經濟學系</strong>，致力於將嚴謹的經濟學理論應用於快速變化的金融市場中。同時，我也在<strong>台灣大學財務金融學系</strong>及<strong>台北科技大學資訊與財金管理系</strong>擔任兼任教職。</p>
+                <br>
+                <p>我的教學與研究核心在於連結傳統金融智慧與新興科技資產，期許透過教育，協助學生與大眾建立正確且系統化的投資觀念。</p>
+                
+                <h3>近期專注項目：</h3>
+                <ul>
+                    <li>推動 AFMA 高級金融管理師認證教育</li>
+                    <li>建立金融教育推廣中心（專注於比特幣與資產配置）</li>
+                    <li>FinTech 與區塊鏈金融應用課程開發</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <h2>教學課程</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <span class="course-tag">核心課程</span>
+                <h3>投資學 (Investments)</h3>
+                <p>從理論基礎到實務模型，建立科學化的資產配置能力。</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 1rem 0;">
+                <p><strong>重點內容：</strong></p>
+                <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: #555;">
+                    <li>風險與報酬的取捨</li>
+                    <li>Markowitz 效率前緣與資產組合最佳化</li>
+                    <li>資本資產定價模型 (CAPM) 完整推導</li>
+                    <li>效率市場假說 (EMH) 與行為財務學</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <span class="course-tag">趨勢應用</span>
+                <h3>金融科技 (FinTech)</h3>
+                <p>探索傳統金融與新興科技的交匯點，解析未來的貨幣型態。</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 1rem 0;">
+                <p><strong>重點內容：</strong></p>
+                <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: #555;">
+                    <li>加密貨幣概論 (Bitcoin, Stablecoins)</li>
+                    <li>去中心化金融 (DeFi) 與 RWA</li>
+                    <li>選擇權市場與波動率策略</li>
+                    <li>人工智慧在金融交易中的應用</li>
+                </ul>
+            </div>
+
+            <div class="course-card">
+                <span class="course-tag">基礎理論</span>
+                <h3>貨幣銀行與金融史</h3>
+                <p>以史為鏡，從貨幣制度的演變看懂當今全球經濟局勢。</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 1rem 0;">
+                <p><strong>重點內容：</strong></p>
+                <ul style="margin-left: 1.2rem; font-size: 0.95rem; color: #555;">
+                    <li>金本位與布雷頓森林體系</li>
+                    <li>石油美元體系 (Petrodollar) 的興衰</li>
+                    <li>兩岸（中國與台灣）股市發展史</li>
+                    <li>央行貨幣政策分析</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" style="background-color: #f8f9fa;">
+        <h2>研究與專業興趣</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p>除教學外，我的學術興趣與實務觀察集中於以下領域：</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+                <span style="background: #fff; padding: 0.5rem 1rem; border: 1px solid #ddd; border-radius: 20px;">加密貨幣選擇權定價</span>
+                <span style="background: #fff; padding: 0.5rem 1rem; border: 1px solid #ddd; border-radius: 20px;">資產定價模型 (CAPM/APT)</span>
+                <span style="background: #fff; padding: 0.5rem 1rem; border: 1px solid #ddd; border-radius: 20px;">金融資產證照 (AFMA)</span>
+                <span style="background: #fff; padding: 0.5rem 1rem; border: 1px solid #ddd; border-radius: 20px;">WACC 與企業評價</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>© 2025 顏廣杰教授. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">東吳大學經濟學系 | 台北市中正區貴陽街一段56號</p>
+    </footer>
+
+</body>
+</html>
